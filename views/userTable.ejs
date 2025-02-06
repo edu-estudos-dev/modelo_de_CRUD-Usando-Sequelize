@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Table</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .w-70{
+            width: 70px;
+        }
+        .thead-danger{
+            background-color: purple !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Users</h1>
+        <table class="table table-striped">
+            <thead class="thead-danger text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Details</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(function(user) { %>
+                    <tr class="text-center ">
+                        <td class="p-1 "><%= user.id %></td>
+                        <td class="p-1 "><%= user.firstName %></td>
+                        <td class="p-1 "><%= user.lastName %></td>
+                        <td class="p-1 "><a href="/user/details/<%= user.id %>" class="w-70 btn btn-secondary btn-sm view-btn btn-action">Details</a></td>
+                        <td class="p-1 "><a href="/user/edit/<%= user.id %>" class="w-70 btn btn-warning btn-sm edit-btn btn-action">Edit</a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
