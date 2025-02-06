@@ -78,7 +78,6 @@ class UserController {
     async showUserById(req, res) {
         try {
             const user = await UserModel.findUser(req.params.id);
-            console.log(user);
             res.status(200).json(user);
         } catch (error) {
             res.status(500).json({

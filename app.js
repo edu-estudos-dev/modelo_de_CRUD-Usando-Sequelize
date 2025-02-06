@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from 'url';
 import methodOverride from 'method-override';
-import route from "./routes/userRoutes.js";
+import route from "./src/routes/userRoutes.js";
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(route);
 // Set the views directory and view engine
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 
 export default app;
